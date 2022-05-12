@@ -8,7 +8,17 @@
  * @example "racecar" -> true
 */
 function problem(str) {
-    return null;
+    let split_string = str.split("");
+    for (let i = 0; i < split_string.length; i++) {
+        if (split_string[i] == ' ') {
+            split_string.splice(i,1)
+        }
+    }
+    if (JSON.stringify(split_string).toLowerCase() === JSON.stringify(split_string.reverse()).toLowerCase()) {
+        return true
+    } else {
+        return false
+    }
 }
 
 const tests = [

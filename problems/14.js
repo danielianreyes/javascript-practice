@@ -7,7 +7,28 @@
  * @example [3,2,3] -> 3
 */
 function problem(numbers) {
-    return null;
+    let map = new Map();
+    occur = Math.floor(numbers.length/2)
+    numbers.forEach(function (item) {
+        let count = 0;
+        numbers.forEach(function (element) {
+            if (element == item) {
+                count ++;
+            }
+        map.set(element, count)
+        });
+    });
+    
+    let m = 0;
+    let k;
+    map.forEach(function (value, key) {
+        if (value > m) {
+            k = key;
+            m = value;
+        }
+    });
+    return k;
+
 }
 
 const tests = [
